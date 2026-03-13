@@ -1,0 +1,198 @@
+Source: sdformat
+Maintainer: Jose Luis Rivero <jrivero@honurobotics.com>
+Section: science
+Priority: optional
+Build-Depends: cmake,
+               debhelper (>= 13),
+               dh-python,
+               libtinyxml2-dev,
+               doxygen,
+               texlive-base,
+               texlive-fonts-recommended,
+               texlive-latex-extra,
+               python3-pybind11,
+               python3-dev,
+               libgz-tools-dev,
+               libgz-math-dev,
+               python3-gz-math,
+               libgz-utils-cli-dev,
+               libgz-utils-dev,
+               liburdfdom-dev,
+               liburdfdom-headers-dev
+Vcs-Browser: https://github.com/gazebosim/sdformat
+Vcs-Git: https://github.com/gazebo-release/gz-rotary-sdformat-release
+Standards-Version: 4.5.1
+Homepage: http://sdformat.org
+
+Package: libsdformat
+Architecture: any
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends:  sdformat-sdf (>= ${source:Version}),
+          ${shlibs:Depends},
+          ${misc:Depends}
+Recommends: sdformat-cli
+Provides: libsdformat-generic
+Conflicts: libsdformat-generic, libsdformat12, libsdformat14, libsdformat15, libsdformat16
+Replaces: libsdformat12, libsdformat14, libsdformat15, libsdformat16
+Multi-Arch: same
+Description: Simulation Description Format (SDF) parser - Shared library
+ SDF is an XML file format that describes environments, objects, and robots
+ in a manner suitable for robotic applications. SDF is capable of representing
+ and describing different physic engines, lighting properties, terrain, static
+ or dynamic objects, and articulated robots with various sensors, and acutators.
+ The format of SDF is also described by XML, which facilitates updates and
+ allows conversion from previous versions. A parser is also contained within
+ this package that reads SDF files and returns a C++ interface.
+
+Package: libsdformat-dev
+Architecture: any
+Section: libdevel
+Depends: libtinyxml2-dev,
+         libgz-tools-dev,
+         libgz-math-dev,
+         libgz-utils-cli-dev,
+         libgz-utils-dev,
+         liburdfdom-dev,
+         liburdfdom-headers-dev,
+         libsdformat (= ${binary:Version}),
+         ${misc:Depends}
+Provides: libsdformat-dev-generic
+Conflicts: libsdformat-dev-generic, libsdformat12-dev, libsdformat14-dev, libsdformat15-dev, libsdformat16-dev
+Replaces: libsdformat12-dev, libsdformat14-dev, libsdformat15-dev, libsdformat16-dev
+Multi-Arch: same
+Description: Simulation Description Format (SDF) parser - Development files
+ SDF is an XML file format that describes environments, objects, and robots
+ in a manner suitable for robotic applications. SDF is capable of representing
+ and describing different physic engines, lighting properties, terrain, static
+ or dynamic objects, and articulated robots with various sensors, and acutators.
+ The format of SDF is also described by XML, which facilitates updates and
+ allows conversion from previous versions. A parser is also contained within
+ this package that reads SDF files and returns a C++ interface.
+
+Package: sdformat-sdf
+Architecture: all
+Section: libdevel
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Provides: sdformat-sdf-generic
+Conflicts: sdformat-sdf-generic, libsdformat1, sdformat12-sdf, sdformat14-sdf, sdformat15-sdf, sdformat16-sdf
+Replaces: sdformat12-sdf, sdformat14-sdf, sdformat15-sdf, sdformat16-sdf
+Description: Simulation Description Format (SDF) parser - SDF files
+ SDF is an XML file format that describes environments, objects, and robots
+ in a manner suitable for robotic applications. SDF is capable of representing
+ and describing different physic engines, lighting properties, terrain, static
+ or dynamic objects, and articulated robots with various sensors, and acutators.
+ The format of SDF is also described by XML, which facilitates updates and
+ allows conversion from previous versions. A parser is also contained within
+ this package that reads SDF files and returns a C++ interface.
+ .
+ This package contains SDF (Simulation Description Format) XML files needed by
+ the libsdformat.
+
+Package: sdformat-cli
+Architecture: any
+Depends: libsdformat (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Provides: sdformat-cli-generic
+Conflicts: sdformat-cli-generic, sdformat12-cli, sdformat14-cli, sdformat15-cli, sdformat16-cli
+Replaces: sdformat12-cli, sdformat14-cli, sdformat15-cli, sdformat16-cli
+Multi-Arch: no
+Description: Simulation Description Format (SDF) parser - CLI
+ SDF is an XML file format that describes environments, objects, and robots
+ in a manner suitable for robotic applications. SDF is capable of representing
+ and describing different physic engines, lighting properties, terrain, static
+ or dynamic objects, and articulated robots with various sensors, and acutators.
+ The format of SDF is also described by XML, which facilitates updates and
+ allows conversion from previous versions. A parser is also contained within
+ this package that reads SDF files and returns a C++ interface.
+ .
+ The package ships the CLI.
+
+Package: python3-sdformat
+Architecture: any
+Depends: ${misc:Depends},
+         python3-gz-math,
+         ${python3:Depends}
+Enhances: libsdformat
+Provides: python3-sdformat-generic
+Conflicts: python3-sdformat-generic, python3-sdformat12, python3-sdformat14, python3-sdformat15, python3-sdformat16
+Replaces: python3-sdformat12, python3-sdformat14, python3-sdformat15, python3-sdformat16
+Description: Simulation Description Format (SDF) parser - SDF files
+ SDF is an XML file format that describes environments, objects, and robots
+ in a manner suitable for robotic applications. SDF is capable of representing
+ and describing different physic engines, lighting properties, terrain, static
+ or dynamic objects, and articulated robots with various sensors, and acutators.
+ The format of SDF is also described by XML, which facilitates updates and
+ allows conversion from previous versions. A parser is also contained within
+ this package that reads SDF files and returns a C++ interface.
+ .
+ This package contains the Python bindings for SDFormat
+
+Package: sdformat-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}, libjs-jquery
+Multi-Arch: foreign
+Provides: sdformat-doc-generic
+Conflicts: sdformat-doc-generic, sdformat12-doc, sdformat14-doc, sdformat15-doc, sdformat16-doc
+Replaces: sdformat12-doc, sdformat14-doc, sdformat15-doc, sdformat16-doc
+Description: Simulation Description Format (SDF) parser - Documentation
+ SDF is an XML file format that describes environments, objects, and robots
+ in a manner suitable for robotic applications. SDF is capable of representing
+ and describing different physic engines, lighting properties, terrain, static
+ or dynamic objects, and articulated robots with various sensors, and acutators.
+ The format of SDF is also described by XML, which facilitates updates and
+ allows conversion from previous versions. A parser is also contained within
+ this package that reads SDF files and returns a C++ interface.
+ .
+ This package contains the program documentation
+
+Package: libgz-rotary-sdformat
+Depends: libsdformat (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: libgz-rotary-sdformat-dev
+Depends: libsdformat-dev (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: libgz-rotary-sdformat-sdf
+Depends: sdformat-sdf (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: libgz-rotary-sdformat-cli
+Depends: sdformat-cli (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: libgz-rotary-sdformat-python
+Depends: python3-sdformat (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: libgz-rotary-sdformat-doc
+Depends: sdformat-doc (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
