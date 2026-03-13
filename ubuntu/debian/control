@@ -181,7 +181,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-sdformat-python
+Package: python3-rotary-sdformat
 Depends: python3-sdformat (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
