@@ -149,7 +149,7 @@ Description: Simulation Description Format (SDF) parser - Documentation
  .
  This package contains the program documentation
 
-Package: libgz-rotary-sdformat
+Package: gz-rotary-sdformat
 Depends: libsdformat (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -157,7 +157,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-sdformat-dev
+Package: gz-rotary-sdformat-dev
 Depends: libsdformat-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -165,7 +165,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-sdformat-sdf
+Package: gz-rotary-sdformat-sdf
 Depends: sdformat-sdf (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -173,7 +173,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-sdformat-cli
+Package: gz-rotary-sdformat-cli
 Depends: sdformat-cli (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -181,7 +181,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: python3-rotary-sdformat
+Package: gz-rotary-sdformat-python
 Depends: python3-sdformat (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -189,7 +189,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-sdformat-doc
+Package: gz-rotary-sdformat-doc
 Depends: sdformat-doc (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
